@@ -31,10 +31,8 @@ function updateStats() {
 */
 //function genDeckToFile(){
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 852551a1df56c3ea9abda8a353419629c3bf38e8
+
 function setup() {
     noCanvas();
     stats = getItem('poker-game-stats') || stats;
