@@ -2,10 +2,7 @@
 let state = 'PICK';
 let pickedHand;
 
-let stats = {
-    totalWins: 0,
-    totalPlays: 0
-};
+let stats = { totalWins: 0, totalPlays: 0 };
 
 function clearStats() {
     stats = {
@@ -33,8 +30,6 @@ function updateStats() {
     files.
 */
 //function genDeckToFile(){
-
-}
 
 function setup() {
     noCanvas();
