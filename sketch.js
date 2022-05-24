@@ -34,7 +34,6 @@ function updateStats() {
 */
 //function genDeckToFile(){
 
-}
 
 function setup() {
     noCanvas();
