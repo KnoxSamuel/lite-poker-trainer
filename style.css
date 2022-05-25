@@ -144,7 +144,7 @@ p {
 }
 
 .card .suit {
-  background-image: url('card.png');
+  /*background-image: url('card.png');*/
   height: 100px;
   width: 90px;
 }

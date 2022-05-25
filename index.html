@@ -8,7 +8,8 @@
   <script src="./p5/p5.gui.js" type="text/javascript"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="./Deck.js" type="text/javascript"></script>
+  <script src="./deck.js" type="text/javascript"></script>
+  <script src="./game.js" type="text/javascript"></script>
   <script src="sketch.js" type="text/javascript"></script>
   <style>
     body {
@@ -26,17 +27,20 @@
   <main>
     <div class="deck">
       <h1>A Deck of Cards</h1>
-      <button id="shuffle-btn" class="button" onclick="shuffleDeck()">Shuffle</button>
+      <button id="shuffle-btn" class="button">Shuffle</button>
+      <div id="deck"></div>
     </div>
     
     <div id="card-game"></div>
     <div id="instruction">
-      <p>Which hand has higher equity by river?</p>
+      <p>Which hand has higher equity (%)?</p>
       <div class="choices">
         <button id="hero">Hand 1</button>
+        <div id="card"></div>
         <button id="villian">Hand 2</button>
+        <div id="card"></div>
       </div>
-      <button id="play-again">PLAY AGAIN?</button>
+      <button id="play-again">New Game?</button>
     </div>
 
     <div id="stats">

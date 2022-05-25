@@ -1,8 +1,8 @@
+new p5();
 
 let state = 'PICK';
 let pickedHand;
-
-let stats = { totalWins: 0, totalPlays: 0 };
+var stats = { totalWins: 0, totalPlays: 0 };
 
 function clearStats() {
     stats = {
@@ -31,27 +31,36 @@ function updateStats() {
 */
 //function genDeckToFile(){
 
+function drawCards() {
+
+}
 
 
 function setup() {
     noCanvas();
+    clearStats();
     stats = getItem('poker-game-stats') || stats;
     updateStats();
     
-    //deck
-    const gameDeck = new Deck();
+    // game play
+    var game = new Game();
+    
+    console.log(game.deck);
+    game.deck.renderDeck();
 
-    console.log(gameDeck.deck);
-    gameDeck.resetDeck();
-    console.log(gameDeck.deck);
+    game.reset();
+    console.log(game.deck);
 
-    //gameDeck.shuffleDeck()
-    //console.log(gameDeck.deck);
+    game.deck.shuffleDeck();
+    console.log(game.deck);
+/* 
+    game.start();
+    console.log(game.deck); */
 
-    //gameDeck.deal()
-    //console.log(gameDeck.deck);
+    //draw cards here
 
-    select('button#play-again').mousePressed(function () {
-        gameDeck.resetDeck();
-    });
+/*     select('button#shuffle-btn').mousePressed(function () {
+        game.reset();
+        console.log(game.deck);
+    }); */
 }

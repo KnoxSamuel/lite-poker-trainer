@@ -1,73 +1,79 @@
-class Deck {
+function Card(num, value, suit){
+    this.num = num;
+    this.value = value;
+    this.suit = suit;
+}
 
-    constructor() {
-        this.deck = [];
-        this.resetDeck();
-        this.shuffleDeck();
-    }
+function Deck() {
+    this.values = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'J', 'Q', 'K'];
+    this.suits = ['h', 's', 'c', 'd'];
+    this.deck = [];
+
+    this.init();
+}
 
 
-    resetDeck() {
-        this.deck = [];
 
-        const suits = ['h', 's', 'c', 'd'];
-        const values = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'J', 'Q', 'K'];
-
-        for (let suit in suits) {
-            for (let value in values) {
-                this.deck.push(`${values[value]}${suits[suit]}`);
-            }
+Deck.prototype.init = function() {
+    for( var s = 0; s < this.suits.length; s++ ) {
+        for( var n = 0; n < this.values.length; n++ ) {
+            this.deck.push( new Card( n+1, this.values[n], this.suits[s] ) );
         }
     }
 
-
+    
     /*
-      Receives HTTP GET response from Jason's
-      hash generation service
-      @ https://cs361-numgen.herokuapp.com/hex
-    */
-    shuffleDeck() {
-        const { deck } = this;
-        let m = deck.length, i;
-
-        while (m) {
-            i = Math.floor(Math.random() * m--); // HTTP GET HEROKU
-
-            [deck[m], deck[i]] = [deck[i], deck[m]];
+    for (let suit in this.suits) {
+        for (let value in this.values) {
+            this.deck.push( this.values[value] + this.suits[suit] );
         }
+    }*/
+}
 
-        return this;
+
+
+/*
+    Receives HTTP GET response from Jason's
+    hash generation service
+    @ https://cs361-numgen.herokuapp.com/hex
+*/
+Deck.prototype.shuffleDeck = function() {
+    let { deck } = this;
+    let m = deck.length, i;
+
+    while (m) {
+        i = Math.floor(Math.random() * m--); // HTTP GET HEROKU
+
+        [deck[m], deck[i]] = [deck[i], deck[m]];
     }
 
+    return this;
+}
 
-    renderDeck() {
-        document.getElementById('deck').innerHTML = '';
-        for(var i = 0; i < deck.length; i++)
-        {
-            var card = document.createElement("div");
-            var value = document.createElement("div");
-            var suit = document.createElement("div");
-            card.className = "card";
-            value.className = "value";
-            suit.className = "suit " + deck[i].Suit;
-    
-            value.innerHTML = deck[i].Value;
-            card.appendChild(value);
-            card.appendChild(suit);
-    
-            document.getElementById("deck").appendChild(card);
-        }
+
+
+Deck.prototype.renderDeck = function() {
+    let { deck } = this;
+    document.getElementById('deck').innerHTML = '';
+    for(var i = 0; i < deck.length; i++)
+    {
+        var card = document.createElement("div");
+        var value = document.createElement("div");
+        var suit = document.createElement("div");
+        card.className = "card";
+        value.className = "value";
+        suit.className = "suit " + deck[i].suit;
+
+        value.innerHTML = deck[i].Value;
+        card.appendChild(value);
+        card.appendChild(suit);
+
+        document.getElementById("deck").appendChild(card);
     }
-    
-
-    load() {
-        deck = getDeck();
-        shuffleDeck();
-        renderDeck();
-    }
+}
 
 
-    deal() {
-        return this.deck.pop();
-    }
+
+Deck.prototype.deal = function() {
+    return this.deck.pop();
 }
