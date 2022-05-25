@@ -12,17 +12,18 @@ function Deck() {
     this.init();
 }
 
-/* Deck.prototype.resetDeck = function(){
+Deck.prototype.resetDeck = function() {
     this.deck = [];
-    this.deck = new Deck;
-} */
-/* Deck.prototype.emptyCards = function() {
-    for (var i = 0; i < 52; i++){
-        this.deck.pop();
+    Deck.prototype.init = function() {
+        for( var s = 0; s < this.suits.length; s++ ) {
+            for( var n = 0; n < this.values.length; n++ ) {
+                this.deck.push( new Card( n+1, this.values[n], this.suits[s] ) );
+            }
+        }
     }
-    return this.deck;
-} */
+}
 
+//Card Index + Number Value + Suit Letter
 Deck.prototype.init = function() {
     for( var s = 0; s < this.suits.length; s++ ) {
         for( var n = 0; n < this.values.length; n++ ) {
@@ -31,7 +32,7 @@ Deck.prototype.init = function() {
     }
 
     
-    /*
+    /* Only shows card in string rep
     for (let suit in this.suits) {
         for (let value in this.values) {
             this.deck.push( this.values[value] + this.suits[suit] );

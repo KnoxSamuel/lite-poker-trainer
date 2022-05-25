@@ -22,13 +22,13 @@ Game.prototype.reset = function() {
     this.round = 'idle';
     this.communityCards = [];   // clear cards on board
     //this.deck.emptyCards();
-    this.deck = new Deck();     // use new deck of cards
+    this.deck.resetDeck();     // use new deck of cards
 };
 
 
 
 Game.prototype.start = function() {
-    this.reset();
+    //this.deck.resetDeck();
     console.log(this.deck);
     logd('========== STARTING GAME ==========');
 
@@ -37,14 +37,14 @@ Game.prototype.start = function() {
         pause(secs='3000');
     }); */
 
-    console.log(this.deck);
+    //console.log(this.deck);
 
     // deal two cards to each players
     this.hero.card1 = this.deck.deal();
     this.villain.card1 = this.deck.deal();
     this.hero.card2 = this.deck.deal();
     this.villain.card2 = this.deck.deal();
-
+    console.log(this.deck);
     // begin game, start 'deal' Round
     logd('========== ROUND DEALT ==========');
     this.round = 'deal';
