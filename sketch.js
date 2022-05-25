@@ -43,24 +43,14 @@ function setup() {
     updateStats();
     
     // game play
+    //game.deck.renderDeck();
     var game = new Game();
-    
-    console.log(game.deck);
-    game.deck.renderDeck();
-
-    game.reset();
-    console.log(game.deck);
-
-    game.deck.shuffleDeck();
-    console.log(game.deck);
-/* 
     game.start();
-    console.log(game.deck); */
 
     //draw cards here
 
-/*     select('button#shuffle-btn').mousePressed(function () {
+    select('button#shuffle-btn').mousePressed(function () {
         game.reset();
         console.log(game.deck);
-    }); */
+    });
 }

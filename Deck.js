@@ -12,7 +12,16 @@ function Deck() {
     this.init();
 }
 
-
+/* Deck.prototype.resetDeck = function(){
+    this.deck = [];
+    this.deck = new Deck;
+} */
+/* Deck.prototype.emptyCards = function() {
+    for (var i = 0; i < 52; i++){
+        this.deck.pop();
+    }
+    return this.deck;
+} */
 
 Deck.prototype.init = function() {
     for( var s = 0; s < this.suits.length; s++ ) {

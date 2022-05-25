@@ -21,6 +21,7 @@ Game.prototype.reset = function() {
     logd('Game reset');
     this.round = 'idle';
     this.communityCards = [];   // clear cards on board
+    //this.deck.emptyCards();
     this.deck = new Deck();     // use new deck of cards
 };
 
@@ -28,7 +29,15 @@ Game.prototype.reset = function() {
 
 Game.prototype.start = function() {
     this.reset();
+    console.log(this.deck);
     logd('========== STARTING GAME ==========');
+
+    // call shuffle
+    /* setTimeout(this.deck.shuffleDeck() {
+        pause(secs='3000');
+    }); */
+
+    console.log(this.deck);
 
     // deal two cards to each players
     this.hero.card1 = this.deck.deal();
