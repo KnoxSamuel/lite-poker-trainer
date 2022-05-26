@@ -23,19 +23,6 @@ function updateStats() {
 }
 
 
-/*
-    Starts Edward's file writing microservice &
-    begins communicating deck exercises to output
-    files.
-*/
-
-//function genDeckToFile(){
-
-function renderCards(game) {
-
-}
-
-
 function setup() {
     console.log('setup()');
     noCanvas();
