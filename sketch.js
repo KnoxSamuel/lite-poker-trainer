@@ -23,34 +23,48 @@ function updateStats() {
 }
 
 
-//function checkWin()
 /*
     Starts Edward's file writing microservice &
     begins communicating deck exercises to output
     files.
 */
+
 //function genDeckToFile(){
 
-function drawCards() {
+function renderCards(game) {
 
 }
 
 
 function setup() {
+    console.log('setup()');
     noCanvas();
     clearStats();
     stats = getItem('poker-game-stats') || stats;
     updateStats();
     
     // game play
-    //game.deck.renderDeck();
     var game = new Game();
-    game.start();
+    console.log(game.deck);
 
-    //draw cards here
 
-    select('button#shuffle-btn').mousePressed(function () {
+    select('button#hero').mousePressed(function () {
+        game.compareEquities();
+    });
+
+    select('button#villian').mousePressed(function () {
+        game.compareEquities();
+    });
+
+    select('button#play-again').mousePressed(function () {
         game.reset();
         console.log(game.deck);
+    });
+
+    select('button#download-files').mousePressed(function () {
+        console.log("getting decks to output files");
+        game.startFileWriting();
+        game.downloadPracticeFile();
+        game.stopFileWriting();
     });
 }
