@@ -42,7 +42,7 @@ class Card {
     getHTML() {
         const cardDiv = document.createElement('img');
         cardDiv.className = 'card';
-        cardDiv.srcset = 'helpers/richardschneider-cardsJS-fe5e857/cards/'+this.value+this.suit+'.svg';
+        cardDiv.srcset = 'scripts/richardschneider-cardsJS-fe5e857/cards/'+this.value+this.suit+'.svg';
         return cardDiv;
     }
     //<img class='card' src='helpers/richardschneider-cardsJS-fe5e857/cards/AC.svg'>

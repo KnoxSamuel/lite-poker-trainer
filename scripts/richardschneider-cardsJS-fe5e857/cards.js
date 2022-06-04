@@ -13,12 +13,12 @@ var cardsScript = document.currentScript;
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('jquery'));
+        exports = factory();
     } else {
         // Browser globals (root is window)
         root.cards = factory(root.jQuery);
     }
-}(this, function ($) {
+}(this, function () {
     'use strict';
 
     var module = {

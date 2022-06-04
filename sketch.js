@@ -1,4 +1,3 @@
-new p5();
 
 let state = 'PICK';
 let pickedHand;
@@ -9,7 +8,6 @@ function clearStats() {
         totalWins: 0,
         totalPlays: 0
     };
-    clearStorage();
     updateStats();
 }
 
@@ -36,17 +34,18 @@ function setup() {
 
 
     select('button#hero').mousePressed(function () {
-        game.compareEquities();
+        game.compareEquities(game.hero, game.villian); // Hero > Villian
+    });
+    select('button#villian').mousePressed(function () {
+        game.compareEquities(game.villian, game.hero); // Villian > Hero
     });
 
-    select('button#villian').mousePressed(function () {
-        game.compareEquities();
-    });
 
     select('button#play-again').mousePressed(function () {
         game.reset();
         console.log(game.deck);
     });
+
 
     select('button#download-files').mousePressed(function () {
         console.log("getting decks to output files");
