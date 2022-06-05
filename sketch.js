@@ -11,7 +11,6 @@ function clearStats() {
     updateStats();
 }
 
-
 function updateStats() {
     const WinRate =
         nf((100 * stats.totalWins) / stats.totalPlays || 0, 2, 1) + '%';
@@ -34,10 +33,13 @@ function setup() {
 
 
     select('button#hero').mousePressed(function () {
-        game.compareEquities(game.hero, game.villian); // Hero > Villian
+        console.log(game.hero_card_str);
+        game.compareEquities(game.hero_card_str, game.villain_card_str); // Hero > villain
     });
-    select('button#villian').mousePressed(function () {
-        game.compareEquities(game.villian, game.hero); // Villian > Hero
+
+    select('button#villain').mousePressed(function () {
+        console.log(game.villain_card_str);
+        game.compareEquities(game.villain_card_str, game.hero_card_str); // villain > Hero
     });
 
 
