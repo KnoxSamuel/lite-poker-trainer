@@ -151,18 +151,6 @@ Game.prototype.compareEquities = function(hand_chosen, hand_compare) {
 
     console.log("chosen hand str : ", hand_chosen);
 
-    //call bash shell commands to get odds output from terminal
-    const { exec } = require('child_process');
-    exec("./node_modules/.bin/poker-odds-calculator -b " + this.flop_str +" "+ hand_chosen +" "+ hand_compare, (err, stdout, stderr) => {
-      if (err) {
-        // node couldn't execute the command
-        return;
-      }
-    
-      // the *entire* stdout and stderr (buffered)
-      console.log(`stdout: ${stdout}`);
-      console.log(`stderr: ${stderr}`);
-    });
     //retrieve percentages to show to user
 
     /* const player1Cards = CardGroup.fromString('JhJs');
@@ -173,6 +161,20 @@ Game.prototype.compareEquities = function(hand_chosen, hand_compare) {
 
     console.log(`Player #1 - ${player1Cards} - ${result.equities[0].getEquity()}%`);
     console.log(`Player #2 - ${player2Cards} - ${result.equities[1].getEquity()}%`); */
+
+
+
+    //call bash shell commands to get odds output from terminal
+/*     var objShell = new ActiveXObject("shell.application");
+    objShell.ShellExecute(commandtoRun, commandParms, "", "open", "1");
+    iRetVal = objShell.ShellExecute(
+        "poker-odds-calculator",
+        [ "-b ", this.flop_str, this.hand_chosen, this.hand_compare ],
+        [ "C:\Users\samue\Desktop\lite-poker-trainer\node_modules\.bin\poker-odds-calculator" ],
+        [ "" ],
+        [ 1 ]
+    ); */
+
 }
 
 
