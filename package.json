@@ -1,0 +1,23 @@
+{
+  "name": "lite-poker-trainer",
+  "version": "1.0.0",
+  "description": "simple html/js/ts browser app poker game equity",
+  "main": "sketch.js",
+  "dependencies": {
+    "poker-odds-calculator": "^0.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KnoxSamuel/lite-poker-trainer.git"
+  },
+  "author": "KnoxSamuel (knoxsa @oregonstate.edu)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KnoxSamuel/lite-poker-trainer/issues"
+  },
+  "homepage": "https://github.com/KnoxSamuel/lite-poker-trainer#readme"
+}
