@@ -3,23 +3,20 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>var exports = {};</script>
 
-    <link rel="stylesheet" type="text/css" href="./scripts/richardschneider-cardsJS-fe5e857/cards.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="./node_modules/p5/lib/p5.js"></script>
+    <script src="./node_modules/pokersolver/pokersolver.js"></script>
 
-    <script src="./node_modules/poker-odds-calculator/dist/bin/poker-odds-calculator.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="./scripts/richardschneider-cardsJS-fe5e857/cards.js"></script>
-    <script type="text/javascript" src="./scripts/p5/p5.js"></script>
-    <script type="text/javascript" src="./scripts/p5/quicksettings.js"></script>
-    <script type="text/javascript" src="./scripts/p5/p5.gui.js"></script>
+    <link rel="stylesheet" type="text/css" href="./scripts/richardschneider-cardsJS-fe5e857/cards.css"/>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <script type="text/javascript" src="./scripts/FileSaver.js"></script>
     
-    <script type="text/javascript" src="game.js"></script>
-    <script type="text/javascript" src="deck.js"></script>
-    <script type="text/javascript" src="sketch.js"></script>
-
+    <script type="module" src="./sketch.js"></script>
+    
     <style>
         body {
             padding: 0;
@@ -35,7 +32,7 @@
 <body>
   <main>
     <div class="deck">
-      <h1>The Random Flop</h1>
+      <h1>Random Deck Shuffle</h1>
 
       <div class="hand hhand">
       </div>
@@ -44,7 +41,7 @@
 
     
     <div id="instruction">
-      <p>Which hand has higher equity (%)?</p>
+      <p>Which is the winning hand?</p>
 
       <div class="player-hands">
         <button id="hero">Hand 1</button>
@@ -54,15 +51,6 @@
         <div class="villain-hand"></div>
 
         <button id="play-again">New Game?</button>
-      </div>
-    </div>
-
-    <div id="stats">
-      <div id="wins">
-        <p>Total Wins: <span class="total">0</span></p>
-        <div class="bar">
-          <span class="win-rate">0%</span>
-        </div>
       </div>
     </div>
 

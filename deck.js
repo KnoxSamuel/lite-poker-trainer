@@ -1,7 +1,7 @@
 const values = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 'T', 'J', 'Q', 'K'];
 const suits = ['H', 'S', 'C', 'D'];
 
-class Deck {
+export class Deck {
     constructor(cards = freshDeck() ) {
         this.cards = cards;
     }
@@ -33,7 +33,7 @@ class Deck {
 }
 
 
-class Card {
+export class Card {
     constructor(value, suit) {
         this.value = value;
         this.suit = suit;
@@ -56,3 +56,6 @@ function freshDeck() {
         })
     });
 }
+
+window.Deck = Deck;
+window.Card = Card;
